@@ -1,0 +1,3 @@
+read sentence
+
+echo "$sentence"

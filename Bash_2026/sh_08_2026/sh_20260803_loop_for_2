@@ -1,7 +1,8 @@
+#!/bin/bash
+
 #echo "Hello World"
 
-echo
-for thing in "$@"; do
+for thing in "$1" "$2" "$3"; do
 	 echo "thing is $thing"
 done
-echo
+
