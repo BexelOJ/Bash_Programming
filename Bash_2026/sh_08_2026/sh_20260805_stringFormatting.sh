@@ -1,3 +1,5 @@
+#!/bin/bash
+
 name="Bexel"
 
 age=35
