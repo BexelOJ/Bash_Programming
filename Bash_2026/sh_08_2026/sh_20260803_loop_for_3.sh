@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#echo "Hello World"
+
+echo
+for thing in "$@"; do
+	 echo "thing is $thing"
+done
+echo

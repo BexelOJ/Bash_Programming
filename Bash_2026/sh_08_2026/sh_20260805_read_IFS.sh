@@ -1,0 +1,11 @@
+#!/bin/bash
+
+IFS=',' read name age city
+
+echo "$name"
+
+echo "$age"
+
+echo "$city"
+
+

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+name="Bexel"
+
+age=35
+
+printf "Name: %s\nAge: %d\n" "$name" "$age"
+
+

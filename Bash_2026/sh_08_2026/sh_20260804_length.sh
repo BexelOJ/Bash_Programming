@@ -1,0 +1,6 @@
+#!/bin/bash
+
+name="India"
+
+echo "Length of the string '${name}' : ${#name}"
+

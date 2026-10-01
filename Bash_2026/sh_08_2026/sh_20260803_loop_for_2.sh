@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#echo "Hello World"
+
+for thing in "$1" "$2" "$3"; do
+	 echo "thing is $thing"
+done
+
