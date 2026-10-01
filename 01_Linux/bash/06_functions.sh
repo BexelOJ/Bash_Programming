@@ -20,8 +20,9 @@ say_hello()
 }
 
 echo
-echo "1. Basic Function"
 echo "----------------------------------------------"
+echo "1. Basic Function"
+echo "----------------------------"
 
 say_hello
 
@@ -36,10 +37,11 @@ greet()
 }
 
 echo
-echo "2. Function Argument"
 echo "----------------------------------------------"
+echo "2. Function Argument"
+echo "----------------------------"
 
-greet "Bexel"
+greet "Er Bexel O J"
 
 
 # ---------------------------------------------------
@@ -54,10 +56,11 @@ show_details()
 }
 
 echo
-echo "3. Multiple Arguments"
 echo "----------------------------------------------"
+echo "3. Multiple Arguments"
+echo "----------------------------"
 
-show_details "Bexel" "Software Engineer" "C++"
+show_details "Er Bexel" "Software Engineer" "C++"
 
 
 # ---------------------------------------------------
@@ -70,8 +73,9 @@ count_arguments()
 }
 
 echo
-echo "4. Number of Arguments"
 echo "----------------------------------------------"
+echo "4. Number of Arguments"
+echo "----------------------------"
 
 count_arguments one two three four
 
@@ -86,8 +90,9 @@ show_arguments()
 }
 
 echo
-echo "5. All Arguments"
 echo "----------------------------------------------"
+echo "5. All Arguments"
+echo "----------------------------"
 
 show_arguments Linux Bash Kernel Driver
 
@@ -98,8 +103,7 @@ show_arguments Linux Bash Kernel Driver
 
 is_greater()
 {
-    if [ "$1" -gt "$2" ]
-    then
+    if [ "$1" -gt "$2" ]; then
         return 0
     else
         return 1
@@ -107,14 +111,17 @@ is_greater()
 }
 
 echo
-echo "6. Function Return Value"
 echo "----------------------------------------------"
+echo "6. Function Return Value"
+echo "----------------------------"
 
-if is_greater 20 10
+read -p "Enter Two Numbers (eg: 20 10): " number1 number2
+
+if is_greater "$number1" "$number2"
 then
-    echo "20 is greater than 10"
+    echo "$number1 is greater than $number2"
 else
-    echo "20 is not greater than 10"
+    echo "$number2 is greater than $number1"
 fi
 
 
@@ -129,12 +136,15 @@ add()
 }
 
 echo
-echo "7. Function Returning Data"
 echo "----------------------------------------------"
+echo "7. Function Returning Data"
+echo "----------------------------"
 
-result=$(add 10 20)
+read -p "Enter Two Numbers (eg: 20 10): " number1 number2
 
-echo "10 + 20 = $result"
+result=$(add "$number1" "$number2")
+
+echo "$number1" + "$number2" = "$result"
 
 
 # ---------------------------------------------------
@@ -148,8 +158,9 @@ show_local()
 }
 
 echo
-echo "8. Local Variable"
 echo "----------------------------------------------"
+echo "8. Local Variable"
+echo "----------------------------"
 
 show_local
 
@@ -166,8 +177,9 @@ show_global()
 }
 
 echo
-echo "9. Global Variable"
 echo "----------------------------------------------"
+echo "9. Global Variable"
+echo "----------------------------"
 
 show_global
 
@@ -182,16 +194,20 @@ system_name()
 }
 
 echo
-echo "10. Function With Command"
 echo "----------------------------------------------"
+echo "10. Function With Command"
+echo "----------------------------"
 
 echo "Operating System: $(system_name)"
-
+echo
+#echo -e "OS full details: \n$(uname -a)"
+printf "OS full details:\n%s\n" "$(uname -a)"
 
 # ---------------------------------------------------
 # End
 # ---------------------------------------------------
 
+echo
 echo
 echo "=============================================="
 echo "        FUNCTIONS DEMO COMPLETED"

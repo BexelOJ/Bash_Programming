@@ -13,10 +13,10 @@ echo "=============================================="
 # ---------------------------------------------------
 # 1. Output redirection
 # ---------------------------------------------------
-
 echo
-echo "1. Output Redirection"
 echo "----------------------------------------------"
+echo "1. Output Redirection"
+echo "----------------------------"
 
 echo "Hello Bexel" > output.txt
 
@@ -28,10 +28,10 @@ cat output.txt
 # ---------------------------------------------------
 # 2. Append redirection
 # ---------------------------------------------------
-
 echo
-echo "2. Append Redirection"
 echo "----------------------------------------------"
+echo "2. Append Redirection"
+echo "----------------------------"
 
 echo "Second line" >> output.txt
 
@@ -41,10 +41,10 @@ cat output.txt
 # ---------------------------------------------------
 # 3. Input redirection
 # ---------------------------------------------------
-
 echo
-echo "3. Input Redirection"
 echo "----------------------------------------------"
+echo "3. Input Redirection"
+echo "----------------------------"
 
 wc -l < output.txt
 
@@ -52,10 +52,10 @@ wc -l < output.txt
 # ---------------------------------------------------
 # 4. Pipe
 # ---------------------------------------------------
-
 echo
-echo "4. Pipe"
 echo "----------------------------------------------"
+echo "4. Pipe"
+echo "----------------------------"
 
 ls /etc | head
 
@@ -63,10 +63,10 @@ ls /etc | head
 # ---------------------------------------------------
 # 5. Multiple pipes
 # ---------------------------------------------------
-
 echo
-echo "5. Multiple Pipes"
 echo "----------------------------------------------"
+echo "5. Multiple Pipes"
+echo "----------------------------"
 
 ls /etc | grep "conf" | head
 
@@ -74,10 +74,10 @@ ls /etc | grep "conf" | head
 # ---------------------------------------------------
 # 6. Count lines
 # ---------------------------------------------------
-
 echo
-echo "6. Count Lines"
 echo "----------------------------------------------"
+echo "6. Count Lines"
+echo "----------------------------"
 
 ls /etc | wc -l
 
@@ -85,10 +85,10 @@ ls /etc | wc -l
 # ---------------------------------------------------
 # 7. Redirect standard error
 # ---------------------------------------------------
-
 echo
-echo "7. Standard Error Redirection"
 echo "----------------------------------------------"
+echo "7. Standard Error Redirection"
+echo "----------------------------"
 
 ls /directory_that_does_not_exist 2> error.txt
 
@@ -100,10 +100,10 @@ cat error.txt
 # ---------------------------------------------------
 # 8. Redirect output and error
 # ---------------------------------------------------
-
 echo
-echo "8. Output and Error Redirection"
 echo "----------------------------------------------"
+echo "8. Output and Error Redirection"
+echo "----------------------------"
 
 ls /tmp /directory_that_does_not_exist > result.txt 2> error.txt
 
@@ -118,10 +118,10 @@ cat error.txt
 # ---------------------------------------------------
 # 9. Redirect output and error together
 # ---------------------------------------------------
-
 echo
-echo "9. Redirect Output and Error Together"
 echo "----------------------------------------------"
+echo "9. Redirect Output and Error Together"
+echo "----------------------------"
 
 ls /tmp /directory_that_does_not_exist > combined.txt 2>&1
 
@@ -131,10 +131,10 @@ cat combined.txt
 # ---------------------------------------------------
 # 10. /dev/null
 # ---------------------------------------------------
-
 echo
-echo "10. /dev/null"
 echo "----------------------------------------------"
+echo "10. /dev/null"
+echo "----------------------------"
 
 ls /directory_that_does_not_exist > /dev/null 2>&1
 
@@ -144,10 +144,10 @@ echo "Error was discarded"
 # ---------------------------------------------------
 # 11. tee command
 # ---------------------------------------------------
-
 echo
-echo "11. tee Command"
 echo "----------------------------------------------"
+echo "11. tee Command"
+echo "----------------------------"
 
 echo "Hello from tee" | tee tee_output.txt
 
@@ -159,10 +159,10 @@ cat tee_output.txt
 # ---------------------------------------------------
 # 12. Command substitution
 # ---------------------------------------------------
-
 echo
-echo "12. Command Substitution"
 echo "----------------------------------------------"
+echo "12. Command Substitution"
+echo "----------------------------"
 
 files=$(ls /etc | head -5)
 
@@ -183,7 +183,7 @@ rm -f tee_output.txt
 # ---------------------------------------------------
 # End
 # ---------------------------------------------------
-
+echo
 echo
 echo "=============================================="
 echo "     PIPES AND REDIRECTION DEMO COMPLETED"

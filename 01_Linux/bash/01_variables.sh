@@ -5,12 +5,10 @@
 # ---------------------------------------------------
 
 name="Kali"
-
 version="Linux"
 
-
-echo "\nName    : $name"
-echo "Version : $version"
+echo -e "\nName     : $name"
+echo "Version  : $version"
 
 # ---------------------------------------------------
 # System information
@@ -22,7 +20,7 @@ kernel="$(uname -r)"
 
 echo "User     : $user"
 echo "Hostname : $hostname"
-echo "Kernel   : $kernel\n"
+echo -e "Kernel   : $kernel\n"
 
 # ---------------------------------------------------
 

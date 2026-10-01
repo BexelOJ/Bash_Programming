@@ -16,22 +16,24 @@ echo "=========================================="
 numbers=(10 20 30 40 50)
 
 echo
-echo "1. Indexed Array"
 echo "------------------------------------------"
+echo "1. Indexed Array"
+echo "----------------------------"
 
 echo "First element : ${numbers[0]}"
 echo "Second element: ${numbers[1]}"
 echo "Third element : ${numbers[2]}"
-echo "Last element  : ${numbers[-1]}"
-
+echo "Last element ( -1st) : ${numbers[-1]}"
+echo " -2th element  : ${numbers[-2]}"
 
 # -------------------------------------------
 # 2. Print all elements
 # -------------------------------------------
 
 echo
-echo "2. All Elements"
 echo "------------------------------------------"
+echo "2. All Elements"
+echo "----------------------------"
 
 echo "All elements: ${numbers[@]}"
 
@@ -41,8 +43,9 @@ echo "All elements: ${numbers[@]}"
 # -------------------------------------------
 
 echo
-echo "3. Array Length"
 echo "------------------------------------------"
+echo "3. Array Length"
+echo "----------------------------"
 
 echo "Number of elements: ${#numbers[@]}"
 
@@ -52,22 +55,26 @@ echo "Number of elements: ${#numbers[@]}"
 # -------------------------------------------
 
 echo
-echo "4. Index and Value"
 echo "------------------------------------------"
+echo "4. Index and Value"
+echo "----------------------------"
 
 for index in "${!numbers[@]}"
 do
     echo "Index $index = ${numbers[$index]}"
 done
 
+# "${numbers[@]}"     # values
+# "${!numbers[@]}"    # indexes
 
 # -------------------------------------------
 # 5. Loop through array
 # -------------------------------------------
 
 echo
-echo "5. Loop Through Array"
 echo "------------------------------------------"
+echo "5. Loop Through Array"
+echo "----------------------------"
 
 for number in "${numbers[@]}"
 do
@@ -80,8 +87,9 @@ done
 # -------------------------------------------
 
 echo
-echo "6. Modify Element"
 echo "------------------------------------------"
+echo "6. Modify Element"
+echo "----------------------------"
 
 numbers[2]=100
 
@@ -94,22 +102,26 @@ echo "${numbers[@]}"
 # -------------------------------------------
 
 echo
-echo "7. Add Elements"
 echo "------------------------------------------"
+echo "7. Add Elements"
+echo "----------------------------"
 
 numbers+=(60 70)
 
 echo "After adding:"
 echo "${numbers[@]}"
 
+# array=(...)       # assign/create
+# array+=(...)      # append
 
 # -------------------------------------------
 # 8. Remove an element
 # -------------------------------------------
 
 echo
-echo "8. Remove Element"
 echo "------------------------------------------"
+echo "8. Remove Element"
+echo "----------------------------"
 
 unset 'numbers[2]'
 
@@ -122,29 +134,33 @@ echo "${numbers[@]}"
 # -------------------------------------------
 
 echo
-echo "9. Array Slicing"
 echo "------------------------------------------"
+echo "9. Array Slicing"
+echo "----------------------------"
 
 echo "Original:"
 echo "${numbers[@]}"
-
+echo
 echo "Slice:"
 echo "${numbers[@]:1:3}"
-
+# "${array[@]:start:length}"
+echo "${numbers[@]:0:2}"
+echo "${numbers[@]:0:12}"
 
 # -------------------------------------------
 # 10. String array
 # -------------------------------------------
 
 echo
-echo "10. String Array"
 echo "------------------------------------------"
+echo "10. String Array"
+echo "----------------------------"
 
 languages=("C" "C++" "Python" "Java" "Bash")
 
-for language in "${languages[@]}"
+for program in "${languages[@]}"
 do
-    echo "Language: $language"
+    echo "Language: $program"
 done
 
 
@@ -153,8 +169,9 @@ done
 # -------------------------------------------
 
 echo
-echo "11. Associative Array"
 echo "------------------------------------------"
+echo "11. Associative Array"
+echo "----------------------------"
 
 declare -A person
 
@@ -174,8 +191,9 @@ echo "OS       : ${person[os]}"
 # -------------------------------------------
 
 echo
-echo "12. Associative Array Loop"
 echo "------------------------------------------"
+echo "12. Associative Array Loop"
+echo "----------------------------"
 
 for key in "${!person[@]}"
 do
@@ -188,12 +206,14 @@ done
 # -------------------------------------------
 
 echo
-echo "13. Read Array From User"
 echo "------------------------------------------"
+echo "13. Read Array From User"
+echo "----------------------------"
 
 read -ra user_array -p "Enter some words: "
 
 echo
+echo "------------------------------------------"
 echo "You entered:"
 
 for item in "${user_array[@]}"
@@ -210,5 +230,47 @@ echo
 echo "=========================================="
 echo "          ARRAY DEMO COMPLETED"
 echo "=========================================="
+
+
+# ---------------------------------------------------
+# Common uses of declare
+# ---------------------------------------------------
+
+# -a
+# Indexed array
+# Example: declare -a numbers
+
+# -A
+# Associative array
+# Example: declare -A person
+
+# -i
+# Integer variable
+# Example: declare -i count=10
+
+# -r
+# Read-only variable
+# Example: declare -r PI=3.14
+
+# -x
+# Export variable
+# Example: declare -x PATH
+
+# -l
+# Convert value to lowercase
+# Example: declare -l name
+
+# -u
+# Convert value to uppercase
+# Example: declare -u name
+
+# -p
+# Display variable attributes/value
+# Example: declare -p person
+
+# -g
+# Create global variable from a function
+# Example: declare -g value=10
+
 
 
