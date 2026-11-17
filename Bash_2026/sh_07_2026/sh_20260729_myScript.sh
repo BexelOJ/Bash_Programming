@@ -1,4 +1,4 @@
-# myscript.sh
+#!/bin/bash
 
 echo "Starting..."
 
